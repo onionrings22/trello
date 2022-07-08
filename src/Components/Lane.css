@@ -1,0 +1,21 @@
+.Lane {
+    height: 100%;
+    padding: 20px;
+    width: calc(25% - 20px);
+}
+
+.red {
+    background-color: lightcoral;
+}
+
+.yellow {
+    background-color: lightgoldenrodyellow;
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.blue {
+    background-color: skyblue;
+}
