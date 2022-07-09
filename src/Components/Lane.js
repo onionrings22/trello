@@ -1,5 +1,6 @@
 import './Lane.css'
 import Task from './Task';
+import React, { useState } from 'react'
 
 function Lane(props) {
     const name = props.name
@@ -10,6 +11,17 @@ function Lane(props) {
     const next = props.next
     const prev = props.prev
 
+    const [newTask, setNewTask] = useState('')
+
+    function handleChange(event) {
+      setNewTask(event.target.value)
+    }
+
+    function addTask() {
+      tasks.push(newTask)
+      setNewTask('')
+    }
+
     const taskList = tasks.map((task, index) =>
         <Task key={index} srcLane={name} index={index} move={move} text={task} next={next} prev={prev}></Task>
     )
@@ -17,8 +29,8 @@ function Lane(props) {
       <div className={`Lane ${color}`}>
         <h1>{title}</h1>
         <div>
-            <input type="text" placeholder="some task"></input>
-            <button type="button">btn</button>
+            <input type="text" value={newTask} onChange={handleChange}></input>
+            <button type="button" onClick={addTask}>Add Task</button>
         </div>
         <div id="task-container">
             {taskList}

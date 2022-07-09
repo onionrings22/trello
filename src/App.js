@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Lane from './Components/Lane';
 import React from 'react';
@@ -16,11 +15,7 @@ class App extends React.Component {
     this.moveTask = this.moveTask.bind(this)
   }
   moveTask(srcLane, srcIndex, destLane) {
-    console.log("srcLane: " , srcLane)
-    console.log("srcIndex: ", srcIndex)
-    console.log("destLane: ", destLane)
     let tempTask = this.state[srcLane][srcIndex]
-    console.log("tempTask: ", tempTask)
     let destCopy = this.state[destLane]
     let srcCopy = this.state[srcLane]
     srcCopy.splice(srcIndex,1)
