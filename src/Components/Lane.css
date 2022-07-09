@@ -1,6 +1,6 @@
 .Lane {
     height: 100%;
-    padding: 20px;
+    margin: 20px;
     width: calc(25% - 20px);
 }
 
